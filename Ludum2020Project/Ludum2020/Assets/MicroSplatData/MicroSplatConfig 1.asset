@@ -85,13 +85,13 @@ MonoBehaviour:
   allTextureChannelAlpha: 3
   sourceTextures:
   - diffuse: {fileID: 2800000, guid: 01c047a754d108f40a0c496ca6ec3ccf, type: 3}
-    height: {fileID: 0}
+    height: {fileID: 2800000, guid: 261e7f1166094b94e8ae169914cfd8d4, type: 3}
     heightChannel: 2
     normal: {fileID: 2800000, guid: 8787e955f637b284fbe3efc82609c217, type: 3}
-    smoothness: {fileID: 0}
+    smoothness: {fileID: 2800000, guid: 657e1ef821c9bc949b87fcd72ba7a590, type: 3}
     smoothnessChannel: 3
-    isRoughness: 0
-    ao: {fileID: 0}
+    isRoughness: 1
+    ao: {fileID: 2800000, guid: a9494cf5a78cd2044834ee2e7e2b0711, type: 3}
     aoChannel: 1
     alpha: {fileID: 0}
     alphaChannel: 1
@@ -115,13 +115,13 @@ MonoBehaviour:
     traxAO: {fileID: 0}
     traxAOChannel: 1
   - diffuse: {fileID: 2800000, guid: eb87fd21b3076bc40bbab6c4b41ed012, type: 3}
-    height: {fileID: 2800000, guid: 114cc324200dc3948a1d3f73deaae0b7, type: 3}
+    height: {fileID: 2800000, guid: 0667412a83efc7f4bab912ad872883a1, type: 3}
     heightChannel: 2
     normal: {fileID: 2800000, guid: 9e88d1bc660926c46b7e36f2cdb4488c, type: 3}
-    smoothness: {fileID: 2800000, guid: 114cc324200dc3948a1d3f73deaae0b7, type: 3}
+    smoothness: {fileID: 2800000, guid: 3d8f444b58f0d664989339ea4d642609, type: 3}
     smoothnessChannel: 3
-    isRoughness: 0
-    ao: {fileID: 2800000, guid: 114cc324200dc3948a1d3f73deaae0b7, type: 3}
+    isRoughness: 1
+    ao: {fileID: 2800000, guid: 0f3f55866746af24bbc6a7d8df4f4f8a, type: 3}
     aoChannel: 1
     alpha: {fileID: 0}
     alphaChannel: 1
