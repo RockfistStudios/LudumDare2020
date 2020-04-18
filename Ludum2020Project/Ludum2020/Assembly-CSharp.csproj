@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AnimEventDispatcher.cs" />
+    <Compile Include="Assets\CleanParameter.cs" />
     <Compile Include="Assets\MicroSplat\Core\Scripts\GlitterLight.cs" />
     <Compile Include="Assets\MicroSplat\Core\Scripts\MicroSplatKeywords.cs" />
     <Compile Include="Assets\MicroSplat\Core\Scripts\MicroSplatObject.cs" />

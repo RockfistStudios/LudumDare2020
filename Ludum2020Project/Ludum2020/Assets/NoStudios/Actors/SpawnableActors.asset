@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1df0547e99e49643bd3f7e76ad5212b, type: 3}
+  m_Name: SpawnableActors
+  m_EditorClassIdentifier: 
+  actorPrefabs:
+  - prefab: {fileID: 6352044092235124500, guid: ee1882dd159555d408ff712da04e2da1,
+      type: 3}
+    spawnPointID: 1
+    targetID: 1
+    targetFromID: {fileID: 0}
+    exitImmunity: 3
+    debugTarget: {fileID: 0}
+    debugExitCollider: {fileID: 0}

@@ -6,7 +6,7 @@ using UnityEngine;
 public class ActorLevelSettings : ScriptableObject
 {
     //actor ID and unique properties as used by all levels
-    public Dictionary<int,ActorSpawnData> actorPrefabs;
+    public List<ActorSpawnData> actorPrefabs;
 
 
     [System.Serializable]
@@ -14,6 +14,9 @@ public class ActorLevelSettings : ScriptableObject
     {
         public GameObject prefab;
         public int spawnPointID;
+        public int targetID; //the spawn manager uses this number to pick from the list of transforms
+        public Transform targetFromID; //this is set by the spawn manager before being sent to the actor itself.
+        public float exitImmunity;
         public Transform debugTarget;
         public Collider debugExitCollider;
         //behavior settings, like turnsearly, or runs faster, etc.

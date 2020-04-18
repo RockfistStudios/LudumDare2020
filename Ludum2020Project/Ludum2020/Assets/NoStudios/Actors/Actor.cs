@@ -5,7 +5,7 @@ using UnityEngine;
 public class Actor : MonoBehaviour
 {
     // Start is called before the first frame update
-    public bool runDebug = true;
+    public bool runDebug = false;
     public ActorLevelSettings.ActorSpawnData debugSpawnInfo;
     public UnityEngine.AI.NavMeshAgent navAgent;
 
@@ -22,19 +22,24 @@ public class Actor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SetAnimatorSpeed();
+        if(exitImmunity>0)
+        {
+            exitImmunity -= Time.deltaTime;
+        }
     }
 
 
     Vector2 smoothDeltaPosition = Vector2.zero;
     Vector2 velocity = Vector2.zero;
+    Vector3 lastPos = new Vector3();
     public void SetAnimatorSpeed()
     {
-        Vector3 worldDeltaPosition = navAgent.nextPosition - transform.position;
-
+        Vector3 worldDeltaPosition = lastPos-gameObject.transform.position;
+        lastPos = gameObject.transform.position;
         // Map 'worldDeltaPosition' to local space
-        float dx = Vector3.Dot(transform.right, worldDeltaPosition);
-        float dy = Vector3.Dot(transform.forward, worldDeltaPosition);
+        float dy = Vector3.Dot(transform.right, worldDeltaPosition);
+        float dx = Vector3.Dot(transform.forward, worldDeltaPosition);
         Vector2 deltaPosition = new Vector2(dx, dy);
 
         // Low-pass filter the deltaMove
@@ -45,7 +50,7 @@ public class Actor : MonoBehaviour
         if (Time.deltaTime > 1e-5f)
             velocity = smoothDeltaPosition / Time.deltaTime;
 
-        bool shouldMove = velocity.magnitude > 0.5f && navAgent.remainingDistance > navAgent.radius;
+        bool shouldMove = velocity.magnitude > 0.1f && navAgent.remainingDistance > navAgent.radius;
 
         // Update animation parameters
         actorAnimator.SetBool("move", shouldMove);
@@ -53,13 +58,16 @@ public class Actor : MonoBehaviour
         actorAnimator.SetFloat("vely", velocity.y);
     }
 
-    public Collider exitPoint;
     public void OnSpawn(ActorLevelSettings.ActorSpawnData spawnInfo)
     {
+        lastPos = gameObject.transform.position;
         if(runDebug)
         {
             SetTarget(spawnInfo.debugTarget);
-            exitPoint = spawnInfo.debugExitCollider;
+        }
+        else
+        {
+            SetTarget(spawnInfo.targetFromID);
         }
         //start anims etc
     }
@@ -72,9 +80,10 @@ public class Actor : MonoBehaviour
     }
 
     bool nearToasty = false;
+    float exitImmunity = 3f;
     public void OnTriggerEnter(Collider other)
     {
-        if (other == exitPoint)
+        if (other.tag == "ExitPoint" && exitImmunity<=0)
         {
             //play exit animation
             //gtfo
