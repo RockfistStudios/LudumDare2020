@@ -46,7 +46,7 @@ public class GameloopController : MonoBehaviour
     {
         //when the comic ends, let this controller know so the game can move forward.
         AdvanceGameState();
-        ShowBlackdrop(false);
+        ShowBlackdrop(true);
     }
 
 
