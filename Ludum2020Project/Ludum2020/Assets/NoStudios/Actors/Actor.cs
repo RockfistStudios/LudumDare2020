@@ -19,6 +19,15 @@ public class Actor : MonoBehaviour
         }
     }
 
+    public void RequestClear()
+    {
+        if(!exiting)
+        {
+            GameObject.Destroy(this.gameObject, 1f);
+            exiting = true;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -81,12 +90,14 @@ public class Actor : MonoBehaviour
 
     bool nearToasty = false;
     float exitImmunity = 3f;
+    bool exiting = false;
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "ExitPoint" && exitImmunity<=0)
         {
             //play exit animation
             //gtfo
+            exiting = true;
             GameObject.Destroy(this.gameObject, 1f);
         }
     }

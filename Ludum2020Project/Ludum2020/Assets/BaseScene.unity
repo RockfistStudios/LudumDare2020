@@ -244,7 +244,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameloopStateAnim: {fileID: 0}
+  actorSpawner: {fileID: 1444266907}
   blackDropAnim: {fileID: 1890277838}
+  lastLevelLoops: 1
   onToastyEnableChange:
     m_PersistentCalls:
       m_Calls: []
@@ -297,7 +299,7 @@ Transform:
   - {fileID: 1862417680}
   - {fileID: 947191112}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &388205686
 Mesh:
@@ -747,85 +749,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553436498}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &719850598
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.142353
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.25191975
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.4802628
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124496, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124499, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_BaseOffset
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124499, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_ObstacleAvoidanceType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6352044092235124500, guid: ee1882dd159555d408ff712da04e2da1,
-        type: 3}
-      propertyPath: m_Name
-      value: Actor
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ee1882dd159555d408ff712da04e2da1, type: 3}
 --- !u!1 &769171736
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,7 +4179,7 @@ Transform:
   - {fileID: 1986338035}
   - {fileID: 2011294999}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &909771045
 GameObject:
@@ -4288,7 +4211,7 @@ Transform:
   - {fileID: 1449303672}
   - {fileID: 791342430}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &947191111
 GameObject:
@@ -4423,7 +4346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666b09a8d9a51064790fbf219f540b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runDebug: 1
+  runDebug: 0
   debugLevelID: 0
   levelSpawns: {fileID: 11400000, guid: d7792eded66c2694eabec71de0603517, type: 2}
   spawnPoints:
@@ -4432,6 +4355,7 @@ MonoBehaviour:
   navTargets:
   - {fileID: 791342430}
   - {fileID: 1449303672}
+  activeActors: []
   actorManagerAnim: {fileID: 1444266909}
   OnLevelEnded:
     m_PersistentCalls:
@@ -4448,7 +4372,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1444266909
 Animator:
@@ -4616,6 +4540,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1542681603}
   - component: {fileID: 1542681606}
+  - component: {fileID: 1542681604}
+  - component: {fileID: 1542681605}
   m_Layer: 0
   m_Name: Toasty
   m_TagString: Untagged
@@ -4637,8 +4563,45 @@ Transform:
   - {fileID: 1608839663}
   - {fileID: 553436499}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1542681604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542681602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6342ba785a458b49a0e91e408589d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1542681605}
+  consumeFuel: 0
+  m_fuel: 50
+  onToastyDieAnimStart:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!95 &1542681605
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542681602}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f2f2c987183d724fbb823a8b3ee47fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!33 &1542681606
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5095,7 +5058,7 @@ Transform:
   m_LocalScale: {x: 1.0001875, y: 0.9987282, z: 0.9904071}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -5.012, y: 0, z: 0}
 --- !u!114 &1846689193
 MonoBehaviour:
@@ -5240,10 +5203,10 @@ RectTransform:
   m_Father: {fileID: 1986338035}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1890277837
 CanvasGroup:

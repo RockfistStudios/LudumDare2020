@@ -8,11 +8,19 @@ public class CleanParameter : StateMachineBehaviour
     public string IntName = "int";
     public int intVal = -1;
     public bool cleanInt = false;
+
+    public bool cleanBool = false;
+    public bool boolVal = false;
+    public string boolName = "bool";
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (cleanInt)
         {
             animator.SetInteger(IntName, intVal);
+        }
+        if(cleanBool)
+        {
+            animator.SetBool(boolName, boolVal);
         }
     }
 
