@@ -73,9 +73,15 @@
     <Compile Include="Assets\MicroSplat\ProceduralTexture\CurvatureMapGenerator.cs" />
     <Compile Include="Assets\MicroSplat\ProceduralTexture\MicroSplatProceduralTextureConfig.cs" />
     <Compile Include="Assets\MicroSplat\ProceduralTexture\MicroSplatProceduralTextureUtil.cs" />
+    <Compile Include="Assets\NoStudios\Actors\Actor.cs" />
+    <Compile Include="Assets\NoStudios\Actors\ActorController.cs" />
+    <Compile Include="Assets\NoStudios\Actors\ActorLevelSettings.cs" />
+    <Compile Include="Assets\NoStudios\GameloopManager\GameloopController.cs" />
+    <Compile Include="Assets\NoStudios\IntroAssets\ComicController.cs" />
     <Compile Include="Assets\NoStudios\Scripts\HelperTools.cs" />
     <Compile Include="Assets\NoStudios\Scripts\MasteraudioHelper.cs" />
     <Compile Include="Assets\NoStudios\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\NoStudios\Toasty\ToastyController.cs" />
     <Compile Include="Assets\WebGLTools\OpenDiscord.cs" />
     <Compile Include="Assets\WebGLTools\delay.cs" />
     <Compile Include="Assets\WebGLTools\scripts\Link.cs" />
