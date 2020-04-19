@@ -8,9 +8,11 @@ public class Actor : MonoBehaviour
     public bool runDebug = false;
     public ActorLevelSettings.ActorSpawnData debugSpawnInfo;
     public UnityEngine.AI.NavMeshAgent navAgent;
+    public int startingFuelWorth=0;
 
     public Animator actorAnimator;
 
+    public bool inKillRange = false;
     void Start()
     {
         if (runDebug)
@@ -78,6 +80,7 @@ public class Actor : MonoBehaviour
         {
             SetTarget(spawnInfo.targetFromID);
         }
+        startingFuelWorth = spawnInfo.fuelWorth;
         //start anims etc
     }
 
@@ -88,9 +91,11 @@ public class Actor : MonoBehaviour
         navAgent.SetDestination(target.position);
     }
 
-    bool nearToasty = false;
+
+
     float exitImmunity = 3f;
     bool exiting = false;
+    bool beingEaten;
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "ExitPoint" && exitImmunity<=0)
@@ -100,6 +105,23 @@ public class Actor : MonoBehaviour
             exiting = true;
             GameObject.Destroy(this.gameObject, 1f);
         }
+        else if(other.tag == "ToastyKillRange")
+        {
+            navAgent.updatePosition = false;
+            navAgent.updateRotation = false;
+            //snap this objects hang point to toasty's kill transform
+            //potentially use a physics joint for this
+            ToastyController.instance.CaughtByToasty(startingFuelWorth,OnToastyKillComplete);
+
+        //we turn toasty's controller on when he starts his eat animation. that frame, everything inside should
+        //be caught, and alert toasty he is holding them
+        //when toasty finishes his eat, they will receive a callback to remove themselves.
+        }
+    }
+
+    public void OnToastyKillComplete()
+    {
+
     }
 
 }
