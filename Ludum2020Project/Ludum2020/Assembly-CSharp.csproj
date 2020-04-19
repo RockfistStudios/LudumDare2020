@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\AnimEventDispatcher.cs" />
     <Compile Include="Assets\CleanParameter.cs" />
+    <Compile Include="Assets\LeafParticleManager.cs" />
     <Compile Include="Assets\MicroSplat\Core\Scripts\GlitterLight.cs" />
     <Compile Include="Assets\MicroSplat\Core\Scripts\MicroSplatKeywords.cs" />
     <Compile Include="Assets\MicroSplat\Core\Scripts\MicroSplatObject.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\NoStudios\Toasty\ToastyController.cs" />
     <Compile Include="Assets\ParticleTest\DebrisDestroy.cs" />
     <Compile Include="Assets\ParticleTest\DebrisSpawn.cs" />
+    <Compile Include="Assets\ParticleTest\ParticleDestroy.cs" />
     <Compile Include="Assets\WebGLTools\OpenDiscord.cs" />
     <Compile Include="Assets\WebGLTools\delay.cs" />
     <Compile Include="Assets\WebGLTools\scripts\Link.cs" />
