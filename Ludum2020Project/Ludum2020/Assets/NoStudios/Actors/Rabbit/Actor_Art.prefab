@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 435949398402959223}
   - component: {fileID: 435949398402959222}
-  - component: {fileID: 435949398402959216}
   - component: {fileID: 435949398402959220}
   - component: {fileID: 435949398402959221}
   - component: {fileID: 435949398402959226}
@@ -47,19 +46,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435949398402959219}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &435949398402959216
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 435949398402959219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &435949398402959220
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -100,11 +86,14 @@ MonoBehaviour:
     spawnPointID: 0
     targetID: 0
     targetFromID: {fileID: 0}
+    fuelWorth: 0
     exitImmunity: 0
     debugTarget: {fileID: 0}
     debugExitCollider: {fileID: 0}
   navAgent: {fileID: 435949398402959220}
+  startingFuelWorth: 0
   actorAnimator: {fileID: 435949398402959227}
+  inKillRange: 0
 --- !u!54 &435949398402959226
 Rigidbody:
   m_ObjectHideFlags: 0
