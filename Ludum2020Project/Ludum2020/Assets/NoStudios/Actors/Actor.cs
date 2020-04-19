@@ -23,7 +23,7 @@ public class Actor : MonoBehaviour
 
     public void RequestClear()
     {
-        if(!exiting)
+        if(!exiting && !beingEaten)
         {
             GameObject.Destroy(this.gameObject, 1f);
             exiting = true;
@@ -95,9 +95,13 @@ public class Actor : MonoBehaviour
 
     float exitImmunity = 3f;
     bool exiting = false;
-    bool beingEaten;
+    bool beingEaten=false;
     public void OnTriggerEnter(Collider other)
     {
+        if(beingEaten)
+        {
+            return;
+        }
         if (other.tag == "ExitPoint" && exitImmunity<=0)
         {
             //play exit animation
@@ -105,12 +109,13 @@ public class Actor : MonoBehaviour
             exiting = true;
             GameObject.Destroy(this.gameObject, 1f);
         }
-        else if(other.tag == "ToastyKillRange")
+        else if(other.tag == "ToastyKillRange" && !exiting)
         {
             navAgent.updatePosition = false;
             navAgent.updateRotation = false;
             //snap this objects hang point to toasty's kill transform
             //potentially use a physics joint for this
+            beingEaten = true;
             ToastyController.instance.CaughtByToasty(startingFuelWorth,OnToastyKillComplete);
 
         //we turn toasty's controller on when he starts his eat animation. that frame, everything inside should
@@ -122,6 +127,7 @@ public class Actor : MonoBehaviour
     public void OnToastyKillComplete()
     {
         Debug.LogWarning("Toasty ate the things");
+        GameObject.Destroy(this.gameObject);
         //crunch!@
         //this object should clean itself and make whatever sound/fx needed.
     }

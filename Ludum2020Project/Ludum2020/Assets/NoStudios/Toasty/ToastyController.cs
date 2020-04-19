@@ -25,11 +25,12 @@ public class ToastyController : MonoBehaviour
     {
         killPoint = killPointRef;
         instance = this;
+        eatRegion.enabled = false;
     }
 
 
     public delegate void OnEatCompleteCallback();
-    List<OnEatCompleteCallback> actorEatenCompleteCallback;
+    List<OnEatCompleteCallback> actorEatenCompleteCallback = new List<OnEatCompleteCallback>();
     public void CaughtByToasty(int fuelWorth,OnEatCompleteCallback callback)
     {
         actorEatenCompleteCallback.Add(callback);
@@ -38,13 +39,17 @@ public class ToastyController : MonoBehaviour
     public void toastyEatFinish()
     {
         //called by anim at the end of toasty's eat animation
-        foreach(OnEatCompleteCallback call in actorEatenCompleteCallback)
+        if (actorEatenCompleteCallback.Count > 0)
         {
-            call(); //let the held things know they are dead now.
+            foreach (OnEatCompleteCallback call in actorEatenCompleteCallback)
+            {
+                call(); //let the held things know they are dead now.
+            }
         }
         actorEatenCompleteCallback.Clear();
         fuel += toastyEatFuelAmount;
         canEat = true;
+        anim.ResetTrigger("Eat");
     }
     public static void BurnedPassiveByToasty(int fuelWorth)
     {
