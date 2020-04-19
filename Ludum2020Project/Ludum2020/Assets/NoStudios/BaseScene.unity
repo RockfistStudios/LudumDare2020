@@ -2112,7 +2112,7 @@ MonoBehaviour:
   testLanguage: 10
   defaultLanguage: 10
   supportedLanguages: 0a000000
-  busFilter: 
+  busFilter: '[All]'
   useTextGroupFilter: 0
   textGroupFilter: 
   resourceClipsPauseDoNotUnload: 0
@@ -2125,7 +2125,19 @@ MonoBehaviour:
   soundGroupTemplate: {fileID: 400008, guid: 877a3a4bf0a4abf43aba41125e1d3101, type: 3}
   soundGroupVariationTemplate: {fileID: 400000, guid: 08eea2d8c4572c7479da53cfbc14bde6,
     type: 3}
-  groupBuses: []
+  groupBuses:
+  - busName: ActorSFX
+    volume: 1
+    isSoloed: 0
+    isMuted: 0
+    voiceLimit: 6
+    stopOldest: 1
+    isExisting: 0
+    isTemporary: 0
+    isUsingOcclusion: 0
+    busColor: {r: 1, g: 1, b: 1, a: 1}
+    mixerChannel: {fileID: 0}
+    forceTo2D: 0
   groupByBus: 1
   sortAlpha: 1
   showRangeSoundGizmos: 1
@@ -3458,7 +3470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db10a6d491569a8419b6f5e1bffc5243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  busIndex: -1
+  busIndex: 2
   spatialBlendType: 1
   spatialBlend: 1
   isSelected: 0
@@ -3508,7 +3520,7 @@ MonoBehaviour:
   soundPlayedEventActive: 0
   soundPlayedCustomEvent: 
   willCleanUpDelegatesAfterStop: 1
-  frames: 3941
+  frames: 7646
 --- !u!1 &1710375711
 GameObject:
   m_ObjectHideFlags: 0
