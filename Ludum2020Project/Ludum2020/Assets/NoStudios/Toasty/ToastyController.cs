@@ -66,6 +66,7 @@ public class ToastyController : MonoBehaviour
             anim.SetTrigger("Eat");
             canEat = false;
         }
+
     }
     public Collider eatRegion;
     public void toastyColliderEnable()
