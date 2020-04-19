@@ -121,7 +121,9 @@ public class Actor : MonoBehaviour
 
     public void OnToastyKillComplete()
     {
-
+        Debug.LogWarning("Toasty ate the things");
+        //crunch!@
+        //this object should clean itself and make whatever sound/fx needed.
     }
 
 }

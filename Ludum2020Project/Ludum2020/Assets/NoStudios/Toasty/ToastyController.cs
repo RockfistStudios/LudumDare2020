@@ -44,6 +44,7 @@ public class ToastyController : MonoBehaviour
         }
         actorEatenCompleteCallback.Clear();
         fuel += toastyEatFuelAmount;
+        canEat = true;
     }
     public static void BurnedPassiveByToasty(int fuelWorth)
     {
@@ -51,11 +52,36 @@ public class ToastyController : MonoBehaviour
         ToastyController.instance.fuel += fuelWorth;
     }
 
+    bool canEat = true;
+    //make a custom getter setter here, and check other states, etc
+    public void ToastyEatInput()
+    {
+        if(canEat)
+        {
+            anim.SetTrigger("Eat");
+            canEat = false;
+        }
+    }
+    public Collider eatRegion;
+    public void toastyColliderEnable()
+    {
+        eatRegion.enabled = true;
+    }
+    public void toastyColliderDisable()
+    {
+        eatRegion.enabled = false;
+    }
 
 
     float timeAccumulator=0f;
     private void Update()
     {
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        {
+            ToastyEatInput();
+        }
+
+
         if(consumeFuel)
         {
             timeAccumulator += Time.deltaTime;
