@@ -592,7 +592,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     1: __MICROSPLAT__;__MICROSPLAT_URP__;__MICROSPLAT_TRIPLANAR__;__MICROSPLAT_DETAILRESAMPLE__;PHY3D_ENABLED;__MICROSPLAT_PROCTEX__
     13: PHY3D_ENABLED;__MICROSPLAT__;__MICROSPLAT_URP__;__MICROSPLAT_DETAILRESAMPLE__;__MICROSPLAT_PROCTEX__;__MICROSPLAT_TRIPLANAR__
-    14: PHY3D_ENABLED
+    14: PHY3D_ENABLED;__MICROSPLAT__;__MICROSPLAT_URP__;__MICROSPLAT_DETAILRESAMPLE__;__MICROSPLAT_PROCTEX__;__MICROSPLAT_TRIPLANAR__
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 1
@@ -611,11 +611,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Template_Lightweight
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: F:\muhprojects\LD2020\Ludum2020Project\Ludum2020\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 808e08560c35d701
   metroApplicationDescription: Template_Lightweight
   wsaImages: {}
   metroTileShortName: 
