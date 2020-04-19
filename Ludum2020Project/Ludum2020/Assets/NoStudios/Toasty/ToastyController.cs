@@ -13,8 +13,9 @@ public class ToastyController : MonoBehaviour
     public int fuel
     {
         get { return m_fuel; }
-        set { m_fuel = value; anim.SetInteger("FuelLevel",value); }
+        set { m_fuel = value; anim.SetInteger("FuelLevel",value); toastyHPChange.Invoke(value); }
     }
+    public IntEvent toastyHPChange;
 
     private void Awake()
     {
