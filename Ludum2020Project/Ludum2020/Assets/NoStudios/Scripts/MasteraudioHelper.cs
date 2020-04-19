@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DarkTonic.MasterAudio;
 
 public class MasteraudioHelper : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string soundName = "name";
+    
+    public void PlaySoundRequest()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        MasterAudio.PlaySound3DAtTransform(soundName,gameObject.transform);
     }
 }
