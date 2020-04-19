@@ -12,6 +12,8 @@ public class Actor : MonoBehaviour
 
     public Animator actorAnimator;
 
+    public Rigidbody rb;
+
     public bool inKillRange = false;
     void Start()
     {
@@ -46,6 +48,10 @@ public class Actor : MonoBehaviour
     Vector3 lastPos = new Vector3();
     public void SetAnimatorSpeed()
     {
+        if (beingEaten)
+        {
+            return;
+        }
         Vector3 worldDeltaPosition = lastPos-gameObject.transform.position;
         lastPos = gameObject.transform.position;
         // Map 'worldDeltaPosition' to local space
@@ -117,7 +123,9 @@ public class Actor : MonoBehaviour
             //potentially use a physics joint for this
             beingEaten = true;
             ToastyController.instance.CaughtByToasty(startingFuelWorth,OnToastyKillComplete);
-
+            navAgent.enabled = false;
+            gameObject.transform.position = ToastyController.instance.killPointRef.position;
+            actorAnimator.SetBool("BeingEaten",true);
         //we turn toasty's controller on when he starts his eat animation. that frame, everything inside should
         //be caught, and alert toasty he is holding them
         //when toasty finishes his eat, they will receive a callback to remove themselves.
