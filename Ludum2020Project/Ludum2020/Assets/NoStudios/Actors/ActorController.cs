@@ -37,7 +37,18 @@ public class ActorController : MonoBehaviour
         if(!alive)
         {
             //toasty died. stop spawns, play lose.
+            toastyAlive = false;
         }
+    }
+
+    public void DoNothing()
+    {
+
+    }
+
+    public void reEnableToastyInputs()
+    {
+        ToastyController.instance.EnableInput();
     }
 
     public void SpawnActor(int id)
@@ -55,6 +66,7 @@ public class ActorController : MonoBehaviour
     GameloopController.LevelCallback LevelCompleteCallback;
     public void StartLevel(int id,GameloopController.LevelCallback onLevelComplete)
     {
+       
         actorManagerAnim.SetInteger("PlayLevel",id);
         levelRunning = true;
         LevelCompleteCallback = onLevelComplete;
@@ -80,6 +92,18 @@ public class ActorController : MonoBehaviour
     public void LevelEndLoss()
     {
         //something has caused a lose condition in the level. such as toasty dying or missing the cart.
+    }
+
+    public Animator blackDropAnim;
+    public void BlackScreen()
+    {
+        blackDropAnim.SetBool("Show", false);
+        //clean spawns during this anim.
+    }
+    public void RemoveBlackScreen()
+    {
+        blackDropAnim.SetBool("Show", true);
+        //clean spawns during this anim.
     }
 
     public void LevelComplete()

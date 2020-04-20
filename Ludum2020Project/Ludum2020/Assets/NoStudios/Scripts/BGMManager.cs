@@ -7,21 +7,34 @@ public class BGMManager : MonoBehaviour
 {
     public PlaylistController PC;
     float opv = 0f;
+
+    private void Start()
+    {
+        ToastyController.instance.onToastyAliveChanged += aliveChanged;
+    }
+    public void aliveChanged(bool alive)
+    {
+        if(!alive)
+        {
+            PC.FadeToVolume(0, 1f);
+        }
+    }
+
     public void StartIntro()
     {
-        opv = PC.PlaylistVolume;
         PC.StartPlaylist("Toasted");
     }
     public void FadeIntroDown()
     {
-        PC.FadeToVolume(0, 1f);
+        PC.FadeToVolume(0, 2f);
     }
     public void ResumeLoop()
     {
-        PC.PlaylistVolume = opv;
-        PC.PausePlaylist();
         PC.PlayNextSong();
-        PC.UnpausePlaylist();
+        PC.FadeToVolume(1, .25f);
+        //PC.PausePlaylist();
+        //PC.PlayNextSong();
+        //PC.UnpausePlaylist();
         //PC.PlayNextSong();
     }
 

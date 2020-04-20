@@ -79,6 +79,7 @@
     <Compile Include="Assets\NoStudios\Actors\Actor.cs" />
     <Compile Include="Assets\NoStudios\Actors\ActorController.cs" />
     <Compile Include="Assets\NoStudios\Actors\ActorLevelSettings.cs" />
+    <Compile Include="Assets\NoStudios\Actors\StopActor.cs" />
     <Compile Include="Assets\NoStudios\GameloopManager\GameloopController.cs" />
     <Compile Include="Assets\NoStudios\IntroAssets\ComicController.cs" />
     <Compile Include="Assets\NoStudios\Scripts\BGMManager.cs" />
@@ -88,7 +89,9 @@
     <Compile Include="Assets\NoStudios\Scripts\EventPassthrough.cs" />
     <Compile Include="Assets\NoStudios\Scripts\HelperTools.cs" />
     <Compile Include="Assets\NoStudios\Scripts\MasteraudioHelper.cs" />
+    <Compile Include="Assets\NoStudios\Scripts\ResetGame.cs" />
     <Compile Include="Assets\NoStudios\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\NoStudios\Scripts\ToastyLowHP.cs" />
     <Compile Include="Assets\NoStudios\Toasty\ToastyController.cs" />
     <Compile Include="Assets\ParticleTest\DebrisDestroy.cs" />
     <Compile Include="Assets\ParticleTest\DebrisSpawn.cs" />
@@ -97,6 +100,7 @@
     <Compile Include="Assets\WebGLTools\delay.cs" />
     <Compile Include="Assets\WebGLTools\scripts\Link.cs" />
     <Compile Include="Assets\WebGLTools\scripts\PressHandler.cs" />
+    <Compile Include="Assets\intshuffle.cs" />
     <None Include="Assets\MicroSplat\Core\Examples\Scene\MicroSplatData\MicroSplat_Base.shader" />
     <None Include="Assets\MicroSplat\Core\Examples\Scene\MicroSplatData\MicroSplat.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

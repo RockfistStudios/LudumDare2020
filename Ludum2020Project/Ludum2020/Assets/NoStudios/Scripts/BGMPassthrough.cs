@@ -6,7 +6,7 @@ public class BGMPassthrough : MonoBehaviour
 {
     public UnityEngine.Events.UnityEvent onInvoke;
 
-    public void DoThing()
+    public void ResumeBGMPassthrough()
     {
         onInvoke.Invoke();
     }

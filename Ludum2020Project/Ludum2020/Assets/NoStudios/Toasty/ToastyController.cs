@@ -5,16 +5,18 @@ using UnityEngine;
 public class ToastyController : MonoBehaviour
 {
     public static ToastyController instance;
+    [SerializeField]
     public UnityEngine.Events.UnityAction<bool> onToastyAliveChanged;
 
     public Animator anim;
     public bool consumeFuel = false;
     public int toastyEatFuelAmount=0;
     public int m_fuel=50;
+    public int burnRate = 2;
     public int fuel
     {
         get { return m_fuel; }
-        set { m_fuel = value; anim.SetInteger("FuelLevel",value); toastyHPChange.Invoke(value); }
+        set { m_fuel = Mathf.Clamp(value,-1,100); anim.SetInteger("FuelLevel", Mathf.Clamp(value, -1, 100)); toastyHPChange.Invoke(Mathf.Clamp(value, -1, 100)); }
     }
     public IntEvent toastyHPChange;
 
@@ -60,10 +62,14 @@ public class ToastyController : MonoBehaviour
     }
 
     bool canEat = true;
+    bool alive = true;
+    bool inputDisabled = true;
+    public void EnableInput() { inputDisabled = false; }
+    public void DisableInput() { inputDisabled = true; }
     //make a custom getter setter here, and check other states, etc
     public void ToastyEatInput()
     {
-        if(canEat)
+        if(canEat && alive && !inputDisabled)
         {
             anim.SetTrigger("Eat");
             canEat = false;
@@ -81,7 +87,19 @@ public class ToastyController : MonoBehaviour
     }
 
 
+    public UnityEngine.Events.UnityEvent onEatAnimStart;
+    public UnityEngine.Events.UnityEvent onEatAnimDone;
+    void ToastyEatStartAnim()
+    {
+        onEatAnimStart.Invoke();
+    }
+    void ToastyEatEndAnim()
+    {
+        onEatAnimDone.Invoke();
+    }
+
     float timeAccumulator=0f;
+    bool HPEatPause = false;
     private void Update()
     {
         if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
@@ -90,15 +108,26 @@ public class ToastyController : MonoBehaviour
         }
 
 
-        if(consumeFuel)
+        if(consumeFuel && !holdingThings)
         {
             timeAccumulator += Time.deltaTime;
             if(timeAccumulator>1f)
             {
-                fuel -= 4;
+                fuel -= burnRate;
                 timeAccumulator = 0f;
             }
         }
+
+        if(fuel<=0 && alive)
+        {
+            KillToasty();
+        }
+    }
+
+    public GameloopController gameLoopManager;
+    public void FirstEatComplete()
+    {
+        gameLoopManager.AdvanceGameState();
     }
 
     public void StopFuelBurn()
@@ -109,18 +138,21 @@ public class ToastyController : MonoBehaviour
     {
         consumeFuel = true;
     }
-
-    public UnityEngine.Events.UnityEvent onToastyDieAnimStart;
     public void KillToasty()
     {
         Debug.LogWarning("toasty killed");
+        alive = false;
+        ToastyLowHP.instance.ToastyDead();
         //start playing death anim, music, etc.
         onToastyAliveChanged(false);
     }
 
     public void ResetToasty()
     {
+        fuel = 50;
+        alive = true;
         Debug.LogWarning("toasty reset");
+        anim.SetBool("Reset", true);
         onToastyAliveChanged(true);
     }
 

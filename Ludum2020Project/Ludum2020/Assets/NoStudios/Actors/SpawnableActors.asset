@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: SpawnableActors
   m_EditorClassIdentifier: 
   actorPrefabs:
-  - prefab: {fileID: 435949398402959219, guid: b2038e25a8a63dc4a8a37b49d3d636ba, type: 3}
+  - prefab: {fileID: 6237703631831734222, guid: 4c82c2d139e1caf438365d7480092da2,
+      type: 3}
     spawnPointID: 0
     targetID: 1
     targetFromID: {fileID: 0}
-    fuelWorth: 5
+    fuelWorth: 40
     exitImmunity: 3
     debugTarget: {fileID: 0}
     debugExitCollider: {fileID: 0}
@@ -25,7 +26,16 @@ MonoBehaviour:
     spawnPointID: 2
     targetID: 3
     targetFromID: {fileID: 0}
-    fuelWorth: 5
+    fuelWorth: 10
+    exitImmunity: 3
+    debugTarget: {fileID: 0}
+    debugExitCollider: {fileID: 0}
+  - prefab: {fileID: 6237703631831734222, guid: 4c82c2d139e1caf438365d7480092da2,
+      type: 3}
+    spawnPointID: 2
+    targetID: 3
+    targetFromID: {fileID: 0}
+    fuelWorth: 10
     exitImmunity: 3
     debugTarget: {fileID: 0}
     debugExitCollider: {fileID: 0}

@@ -56,7 +56,7 @@ public class Actor : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         SetAnimatorSpeed();
         if(exitImmunity>0)
@@ -157,7 +157,7 @@ public class Actor : MonoBehaviour
 
     public void OnToastyKillComplete()
     {
-        Debug.LogWarning("Toasty ate the things");
+        //Debug.LogWarning("Toasty ate the things");
         GameObject.Destroy(this.gameObject);
         //crunch!@
         //this object should clean itself and make whatever sound/fx needed.
@@ -168,6 +168,7 @@ public class Actor : MonoBehaviour
         ActiveActors.Remove(this.gameObject.transform);
     }
 
+    public static Vector3 avgPos = Vector3.zero;
     public static float ActorAveragePos()
     {
         Vector3 pos = Vector3.zero;
@@ -180,6 +181,7 @@ public class Actor : MonoBehaviour
         {
             sum += t.position;
         }
+        avgPos = sum.normalized;
         float dir = AngleDir(Camera.main.transform.position,sum,Vector3.up);
         return dir;
     }
