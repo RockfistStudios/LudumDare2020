@@ -95,7 +95,7 @@ public class ToastyController : MonoBehaviour
             timeAccumulator += Time.deltaTime;
             if(timeAccumulator>1f)
             {
-                fuel -= 1;
+                fuel -= 4;
                 timeAccumulator = 0f;
             }
         }

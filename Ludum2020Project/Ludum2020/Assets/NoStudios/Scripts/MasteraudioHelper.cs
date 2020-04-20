@@ -26,12 +26,7 @@ public class MasteraudioHelper : MonoBehaviour
 
     public void PlayRabbitWalk()
     {
-        MasterAudio.PlaySound3DAtTransform(RabbitMove, gameObject.transform);
-    }
-
-    public void PlayRabbitWalk100()
-    {
-        MasterAudio.PlaySound3DAtTransform(RabbitMove100, gameObject.transform);
+        MasterAudio.PlaySound3DFollowTransform(RabbitMove, gameObject.transform);
     }
 
 

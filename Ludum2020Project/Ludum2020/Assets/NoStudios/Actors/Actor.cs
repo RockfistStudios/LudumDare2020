@@ -15,7 +15,10 @@ public class Actor : MonoBehaviour
     public Rigidbody rb;
 
     public bool playIntro = false;
-    public string IntroNoise = "RabbitMove";
+    public string IntroNoise = "RabbitEnter";
+    public float introChance = .5f;
+
+    public static bool oneTimeIntro=true;
 
     public bool inKillRange = false;
     void Start()
@@ -24,9 +27,17 @@ public class Actor : MonoBehaviour
         {
             OnSpawn(debugSpawnInfo);
         }
-        if (playIntro)
+        if (playIntro && oneTimeIntro)
         {
+            oneTimeIntro = false;
             DarkTonic.MasterAudio.MasterAudio.PlaySound3DFollowTransform(IntroNoise, gameObject.transform);
+        }
+        else if(playIntro)
+        {
+            if(Random.Range(0f,1f)>introChance)
+            {
+                DarkTonic.MasterAudio.MasterAudio.PlaySound3DFollowTransform(IntroNoise, gameObject.transform);
+            }
         }
     }
 

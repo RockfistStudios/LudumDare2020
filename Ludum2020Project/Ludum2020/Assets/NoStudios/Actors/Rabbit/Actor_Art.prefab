@@ -97,7 +97,9 @@ MonoBehaviour:
   startingFuelWorth: 0
   actorAnimator: {fileID: 435949398402959227}
   rb: {fileID: 435949398402959226}
-  IntroNoise: RabbitMove
+  playIntro: 1
+  IntroNoise: RabbitEnter
+  introChance: 0.5
   inKillRange: 0
 --- !u!54 &435949398402959226
 Rigidbody:
@@ -146,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a621e2487977046b3638967561fceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPos: {fileID: 0}
+  targetPos: {fileID: 435949398402959223}
 --- !u!1 &3695236091406683515
 GameObject:
   m_ObjectHideFlags: 0
