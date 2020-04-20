@@ -147,12 +147,16 @@ public class ToastyController : MonoBehaviour
         onToastyAliveChanged(false);
     }
 
-    public void ResetToasty()
+    public void ResetToasty(bool animReset = true)
     {
         fuel = 50;
         alive = true;
+        consumeFuel = true;
         Debug.LogWarning("toasty reset");
-        anim.SetBool("Reset", true);
+        if (animReset)
+        {
+            anim.SetBool("Reset", true);
+        }
         onToastyAliveChanged(true);
     }
 

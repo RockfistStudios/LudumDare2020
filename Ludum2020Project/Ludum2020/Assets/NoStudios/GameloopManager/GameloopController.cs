@@ -62,10 +62,24 @@ public class GameloopController : MonoBehaviour
 
     public void StartLevel(int id)
     {
-        if(id==0 || !levelOutcome)
+        if(id==0)
+        {
+            if (levelOutcome)
+            {
+                ToastyController.instance.ResetToasty(false);
+                //the level controller fades it early to remove spawns, it is brought back here.
+                RemoveBlackScreen();
+            }
+            else
+            {
+                resetAnim.SetBool("Restart",true);
+                return;
+            }
+        }
+        if(!levelOutcome)
         {
             ToastyController.instance.ResetToasty();
-            //the level controller fades it early to remove spawns, it is brought back here.
+            BGMManager.instance.RestartBGMForLevel();
             RemoveBlackScreen();
         }
 
@@ -78,6 +92,8 @@ public class GameloopController : MonoBehaviour
 
     }
 
+
+    public Animator resetAnim;
     bool levelOutcome = true;
     public void LevelOver(bool victory)
     {

@@ -2298,6 +2298,7 @@ MonoBehaviour:
   gameloopStateAnim: {fileID: 0}
   actorSpawner: {fileID: 1444266907}
   blackDropAnim: {fileID: 1890277838}
+  resetAnim: {fileID: 909190501}
   lastLevelLoops: 1
   gameOverAnim: {fileID: 0}
 --- !u!95 &382863850
@@ -4764,9 +4765,9 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 0d202630f688fc44a896324ef241b418, type: 3}
       songName: Toasted Theme (intro)
       resourceFileName: 
-      volume: 0.05
+      volume: 0.1
       pitch: 1
-      isExpanded: 1
+      isExpanded: 0
       isLoop: 0
       isChecked: 1
       metadataStringValues: []
@@ -4789,10 +4790,77 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 06779ea8e17faee4cbd24a2857d7096f, type: 3}
       songName: Toasted Theme (normal loop with identifier)
       resourceFileName: 
-      volume: 0.069
+      volume: 0.1
       pitch: 1
-      isExpanded: 1
+      isExpanded: 0
+      isLoop: 1
+      isChecked: 1
+      metadataStringValues: []
+      metadataBoolValues: []
+      metadataIntValues: []
+      metadataFloatValues: []
+      metadataExpanded: 1
+      songStartTimeMode: 0
+      customStartTime: 0
+      customStartTimeMax: 0
+      lastKnownTimePoint: 0
+      wasLastKnownTimePointSet: 0
+      songIndex: 0
+      songStartedEventExpanded: 0
+      songStartedCustomEvent: 
+      songChangedEventExpanded: 0
+      songChangedCustomEvent: 
+    bulkLocationMode: 0
+    crossfadeMode: 0
+    crossFadeTime: 1
+    fadeInFirstSong: 0
+    fadeOutLastSong: 0
+    bulkEditMode: 0
+    isTemporary: 0
+    showMetadata: 0
+    songMetadataProps: []
+    newMetadataPropName: PropertyName
+    newMetadataPropType: 1
+    newMetadataPropRequired: 1
+    newMetadataPropCanHaveMult: 0
+  - isExpanded: 1
+    playlistName: Toasted_Restart
+    songTransitionType: 1
+    MusicSettings:
+    - alias: 
+      audLocation: 0
+      clip: {fileID: 8300000, guid: d88d8fdd032aae14ab61414f4885c24f, type: 3}
+      songName: Toasted Theme (Normal Quicker Loop intro)-partial
+      resourceFileName: 
+      volume: 0.1
+      pitch: 1
+      isExpanded: 0
       isLoop: 0
+      isChecked: 1
+      metadataStringValues: []
+      metadataBoolValues: []
+      metadataIntValues: []
+      metadataFloatValues: []
+      metadataExpanded: 1
+      songStartTimeMode: 0
+      customStartTime: 0
+      customStartTimeMax: 0
+      lastKnownTimePoint: 0
+      wasLastKnownTimePointSet: 0
+      songIndex: 0
+      songStartedEventExpanded: 0
+      songStartedCustomEvent: 
+      songChangedEventExpanded: 0
+      songChangedCustomEvent: 
+    - alias: 
+      audLocation: 0
+      clip: {fileID: 8300000, guid: 06779ea8e17faee4cbd24a2857d7096f, type: 3}
+      songName: Toasted Theme (normal loop with identifier)
+      resourceFileName: 
+      volume: 0.1
+      pitch: 1
+      isExpanded: 0
+      isLoop: 1
       isChecked: 1
       metadataStringValues: []
       metadataBoolValues: []

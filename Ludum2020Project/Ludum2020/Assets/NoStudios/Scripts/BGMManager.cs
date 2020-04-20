@@ -7,17 +7,27 @@ public class BGMManager : MonoBehaviour
 {
     public PlaylistController PC;
     float opv = 0f;
+    public static BGMManager instance;
 
     private void Start()
     {
+        instance = this;
         ToastyController.instance.onToastyAliveChanged += aliveChanged;
     }
+    bool isAlive = true;
     public void aliveChanged(bool alive)
     {
+        isAlive = alive;
         if(!alive)
         {
             PC.FadeToVolume(0, 1f);
         }
+    }
+
+    public void RestartBGMForLevel()
+    {
+        PC.StartPlaylist("Toasted_Restart");
+        PC.FadeToVolume(1, .25f);
     }
 
     public void StartIntro()
