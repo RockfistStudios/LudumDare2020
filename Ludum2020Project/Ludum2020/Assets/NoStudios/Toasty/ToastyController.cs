@@ -28,16 +28,18 @@ public class ToastyController : MonoBehaviour
         eatRegion.enabled = false;
     }
 
-
+    public static bool holdingThings = false;
     public delegate void OnEatCompleteCallback();
     List<OnEatCompleteCallback> actorEatenCompleteCallback = new List<OnEatCompleteCallback>();
     public void CaughtByToasty(int fuelWorth,OnEatCompleteCallback callback)
     {
         actorEatenCompleteCallback.Add(callback);
         toastyEatFuelAmount += fuelWorth;
+        holdingThings = true;
     }
     public void toastyEatFinish()
     {
+        holdingThings = false;
         //called by anim at the end of toasty's eat animation
         if (actorEatenCompleteCallback.Count > 0)
         {

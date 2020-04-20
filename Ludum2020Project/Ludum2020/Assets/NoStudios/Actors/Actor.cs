@@ -14,6 +14,7 @@ public class Actor : MonoBehaviour
 
     public Rigidbody rb;
 
+    public bool playIntro = false;
     public string IntroNoise = "RabbitMove";
 
     public bool inKillRange = false;
@@ -23,7 +24,10 @@ public class Actor : MonoBehaviour
         {
             OnSpawn(debugSpawnInfo);
         }
-        DarkTonic.MasterAudio.MasterAudio.PlaySound3DFollowTransform(IntroNoise,gameObject.transform);
+        if (playIntro)
+        {
+            DarkTonic.MasterAudio.MasterAudio.PlaySound3DFollowTransform(IntroNoise, gameObject.transform);
+        }
     }
 
     public void RequestClear()
