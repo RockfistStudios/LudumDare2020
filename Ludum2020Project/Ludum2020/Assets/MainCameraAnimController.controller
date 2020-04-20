@@ -39,7 +39,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intName: EatposeID
   lowRange: 0
-  maxRange: 2
+  maxRange: 3
 --- !u!1101 &-6802065010466181405
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intName: EatposeID
   lowRange: 0
-  maxRange: 2
+  maxRange: 3
 --- !u!1102 &-4893085105694942353
 AnimatorState:
   serializedVersion: 5
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intName: EatposeID
   lowRange: 0
-  maxRange: 2
+  maxRange: 3
 --- !u!1107 &2059140897887653857
 AnimatorStateMachine:
   serializedVersion: 5
