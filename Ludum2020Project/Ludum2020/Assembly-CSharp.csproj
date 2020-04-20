@@ -82,6 +82,7 @@
     <Compile Include="Assets\NoStudios\GameloopManager\GameloopController.cs" />
     <Compile Include="Assets\NoStudios\IntroAssets\ComicController.cs" />
     <Compile Include="Assets\NoStudios\Scripts\BGMManager.cs" />
+    <Compile Include="Assets\NoStudios\Scripts\BGMPassthrough.cs" />
     <Compile Include="Assets\NoStudios\Scripts\CampfireAmbienceManager.cs" />
     <Compile Include="Assets\NoStudios\Scripts\HelperTools.cs" />
     <Compile Include="Assets\NoStudios\Scripts\MasteraudioHelper.cs" />

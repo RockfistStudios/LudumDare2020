@@ -18,19 +18,21 @@ public class LeafParticleManager : MonoBehaviour
     public Transform toastyPassiveBurnPoint;
     private void Update()
     {
-        //int numParticles = leaves.GetParticles(particles);
-        //int i = 0;
-        ////!(Vector3.Distance(particles[i].position,Vector3.zero) < .1f
-        //while (i<particles.Length)
-        //{ 
-        //    if (Vector3.Distance(particles[i].position,toastyPassiveBurnPoint.position)<1.5f)
-        //    {
-        //        SpawnSmokePuff(particles[i].position,particles[i].velocity);
-        //        particles[i].remainingLifetime = 0f;
-        //    }
-        //    i++;
-        //}
-        //leaves.SetParticles(particles);
+        int numParticles = leaves.GetParticles(particles);
+        int i = 0;
+        //
+        while (i < particles.Length)
+        {
+            if (Vector3.Distance(particles[i].position, toastyPassiveBurnPoint.position) < 1f
+                && !(Vector3.Distance(particles[i].position, Vector3.zero) < .1f)
+                )
+            {
+                SpawnSmokePuff(particles[i].position, particles[i].velocity);
+                particles[i].remainingLifetime = 0f;
+            }
+            i++;
+        }
+        leaves.SetParticles(particles);
     }
 
     //public void OnParticleCollision(GameObject other)
@@ -38,7 +40,7 @@ public class LeafParticleManager : MonoBehaviour
     //    int numCollisions = 0;
     //    if (other.gameObject.tag == "DebrisBurn")
     //    {
-    //        numCollisions = leaves.GetCollisionEvents(other,collisionEvents);
+    //        numCollisions = leaves.GetCollisionEvents(other, collisionEvents);
     //        int i = 0;
     //        while (i < numCollisions)
     //        {

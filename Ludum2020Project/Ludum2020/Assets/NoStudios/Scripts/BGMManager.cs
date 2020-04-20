@@ -14,11 +14,15 @@ public class BGMManager : MonoBehaviour
     }
     public void FadeIntroDown()
     {
-        PC.StopPlaylist();
+        PC.FadeToVolume(0, 1f);
     }
     public void ResumeLoop()
     {
+        PC.PlaylistVolume = opv;
+        PC.PausePlaylist();
         PC.PlayNextSong();
+        PC.UnpausePlaylist();
+        //PC.PlayNextSong();
     }
 
     public void SetLoopByHealth(int level)
