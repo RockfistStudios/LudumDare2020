@@ -59,6 +59,8 @@ public class GameloopController : MonoBehaviour
         gameloopStateAnim.SetTrigger("Advance");
     }
 
+    int maxPlays = 2;
+    int maxCount = 0;
 
     public void StartLevel(int id)
     {
@@ -116,6 +118,7 @@ public class GameloopController : MonoBehaviour
 
     int currentLevel = 0;
     int maxLevel = 1;
+    public Animator EndCardAnim;
     public bool lastLevelLoops = true;
     public void StartNextLevel()
     {
@@ -124,7 +127,16 @@ public class GameloopController : MonoBehaviour
             //end game instead, play winscreen?
             if (lastLevelLoops)
             {
+                maxCount++;
                 StartLevel(maxLevel);
+                if(maxPlays<maxCount)
+                {
+                    EndCardAnim.SetBool("End",true);
+                }
+            }
+            else
+            {
+                maxCount++;
             }
         }
         else
@@ -151,10 +163,9 @@ public class GameloopController : MonoBehaviour
         //fade to black, reset toasty, try again?
     }
 
-    public Animator gameOverAnim;
     public void GameOverPerma(bool isPacifist)
     {
-        gameOverAnim.SetBool("Restart", true);
+        //gameOverAnim.SetBool("Restart", true);
         //special ending if not eating rabbit. restart last level (or first) if not.
     }
 

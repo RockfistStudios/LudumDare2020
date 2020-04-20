@@ -86,6 +86,7 @@
     <Compile Include="Assets\NoStudios\Scripts\BGMPassthrough.cs" />
     <Compile Include="Assets\NoStudios\Scripts\CameraController.cs" />
     <Compile Include="Assets\NoStudios\Scripts\CampfireAmbienceManager.cs" />
+    <Compile Include="Assets\NoStudios\Scripts\DestroyCard.cs" />
     <Compile Include="Assets\NoStudios\Scripts\EventPassthrough.cs" />
     <Compile Include="Assets\NoStudios\Scripts\HelperTools.cs" />
     <Compile Include="Assets\NoStudios\Scripts\MasteraudioHelper.cs" />
