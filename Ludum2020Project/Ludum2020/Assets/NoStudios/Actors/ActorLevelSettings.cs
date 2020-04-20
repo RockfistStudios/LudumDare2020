@@ -17,7 +17,7 @@ public class ActorLevelSettings : ScriptableObject
         public int targetID; //the spawn manager uses this number to pick from the list of transforms
         public Transform targetFromID; //this is set by the spawn manager before being sent to the actor itself.
         public int fuelWorth;
-        public float panicSpeed;
+        public float panicSpeedMult;
         public float speedMult;
         public float exitImmunity;
         public Transform debugTarget;

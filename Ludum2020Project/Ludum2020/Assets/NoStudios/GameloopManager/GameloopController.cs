@@ -116,7 +116,7 @@ public class GameloopController : MonoBehaviour
         //called when the level end animation finishes in the actormanager.       
     }
 
-    int currentLevel = 0;
+    public int currentLevel = 0;
     int maxLevel = 1;
     public Animator EndCardAnim;
     public bool lastLevelLoops = true;

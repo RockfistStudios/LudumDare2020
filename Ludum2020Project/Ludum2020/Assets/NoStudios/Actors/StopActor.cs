@@ -10,7 +10,7 @@ public class StopActor : Actor
     bool sentStop = false;
     public override void Update()
     {
-        if (!sentStop)
+        if (!sentStop && !onFire)
         {
             counter += Time.deltaTime;
             if(counter>stopAtSeconds)

@@ -72,6 +72,10 @@ public class ToastyController : MonoBehaviour
         if(canEat && alive && !inputDisabled)
         {
             anim.SetTrigger("Eat");
+            if (onToastyEat != null)
+            {
+                onToastyEat();
+            }
             canEat = false;
         }
 
@@ -98,6 +102,8 @@ public class ToastyController : MonoBehaviour
         onEatAnimDone.Invoke();
     }
 
+    public UnityEngine.Events.UnityAction onToastyEat;
+
     float timeAccumulator=0f;
     bool HPEatPause = false;
     private void Update()
@@ -115,9 +121,16 @@ public class ToastyController : MonoBehaviour
             {
                 if(fuel>70)
                 {
+                    fuel -= burnRate*2;
+                }
+                if(gameLoopManager.currentLevel >0)
+                {
+                    fuel -= burnRate+1*gameLoopManager.currentLevel;
+                }
+                else
+                {
                     fuel -= burnRate;
                 }
-                fuel -= burnRate;
                 timeAccumulator = 0f;
             }
         }

@@ -44,6 +44,9 @@ public class Actor : MonoBehaviour
                 DarkTonic.MasterAudio.MasterAudio.PlaySound3DFollowTransform(IntroNoise, gameObject.transform);
             }
         }
+
+        ToastyController.instance.onToastyEat += OnToastyEatAlert;
+
     }
 
     public void RequestClear()
@@ -110,6 +113,8 @@ public class Actor : MonoBehaviour
             SetTarget(spawnInfo.targetFromID);
         }
         startingFuelWorth = spawnInfo.fuelWorth;
+        navAgent.speed *= spawnInfo.speedMult;
+        panicSpeedMult = spawnInfo.panicSpeedMult;
         //start anims etc
     }
 
@@ -118,6 +123,31 @@ public class Actor : MonoBehaviour
     {
         navTarget = target;
         navAgent.SetDestination(target.position);
+    }
+
+
+    public static float flameRange = 2.3f;
+    public bool onFire = false;
+    public void OnToastyEatAlert()
+    {
+        if( Vector3.Distance(ToastyController.instance.transform.position,gameObject.transform.position)<flameRange)
+        {
+            onFire = true;
+            Enflame();
+        }
+    }
+
+    public float panicSpeedMult = 1f;
+    public ParticleSystem fireParticle;
+    public ParticleSystem smokeParticle;
+    public virtual void Enflame()
+    {
+        navAgent.speed *=panicSpeedMult;
+        actorAnimator.SetBool("Panic",true);
+        fireParticle.Play();
+        smokeParticle.Play();
+        //panic sounds
+        //add to panic animation, clone run animation
     }
 
 
@@ -131,7 +161,7 @@ public class Actor : MonoBehaviour
         {
             return;
         }
-        if (other.tag == "ExitPoint" && exitImmunity<=0)
+        if (other.tag == "ExitPoint" && (exitImmunity<=0||onFire))
         {
             //play exit animation
             //gtfo
@@ -166,6 +196,7 @@ public class Actor : MonoBehaviour
     private void OnDestroy()
     {
         ActiveActors.Remove(this.gameObject.transform);
+        ToastyController.instance.onToastyEat -= OnToastyEatAlert;
     }
 
     public static Vector3 avgPos = Vector3.zero;
