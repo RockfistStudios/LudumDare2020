@@ -21,8 +21,13 @@ public class Actor : MonoBehaviour
     public static bool oneTimeIntro=true;
 
     public bool inKillRange = false;
+    public static List<Transform> ActiveActors = new List<Transform>();
+
+
+
     void Start()
     {
+        ActiveActors.Add(this.gameObject.transform);
         if (runDebug)
         {
             OnSpawn(debugSpawnInfo);
@@ -156,6 +161,46 @@ public class Actor : MonoBehaviour
         GameObject.Destroy(this.gameObject);
         //crunch!@
         //this object should clean itself and make whatever sound/fx needed.
+    }
+
+    private void OnDestroy()
+    {
+        ActiveActors.Remove(this.gameObject.transform);
+    }
+
+    public static float ActorAveragePos()
+    {
+        Vector3 pos = Vector3.zero;
+        Vector3 sum = Vector3.zero;
+        if(ActiveActors.Count==0)
+        {
+            return 0f;
+        }
+        foreach(Transform t in ActiveActors)
+        {
+            sum += t.position;
+        }
+        float dir = AngleDir(Camera.main.transform.position,sum,Vector3.up);
+        return dir;
+    }
+
+    public static float AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up)
+    {
+        Vector3 right = Vector3.Cross(up, fwd);        // right vector
+        float dir = Vector3.Dot(right, targetDir);
+
+        if (dir > 0f)
+        {
+            return 1f;
+        }
+        else if (dir < 0f)
+        {
+            return -1f;
+        }
+        else
+        {
+            return 0f;
+        }
     }
 
 }
