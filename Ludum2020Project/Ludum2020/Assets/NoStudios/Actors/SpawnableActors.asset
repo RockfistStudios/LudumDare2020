@@ -19,6 +19,8 @@ MonoBehaviour:
     targetID: 1
     targetFromID: {fileID: 0}
     fuelWorth: 40
+    panicSpeed: 0
+    speedMult: 0
     exitImmunity: 3
     debugTarget: {fileID: 0}
     debugExitCollider: {fileID: 0}
@@ -27,6 +29,8 @@ MonoBehaviour:
     targetID: 3
     targetFromID: {fileID: 0}
     fuelWorth: 10
+    panicSpeed: 5
+    speedMult: 0
     exitImmunity: 3
     debugTarget: {fileID: 0}
     debugExitCollider: {fileID: 0}
@@ -35,7 +39,9 @@ MonoBehaviour:
     spawnPointID: 2
     targetID: 3
     targetFromID: {fileID: 0}
-    fuelWorth: 10
+    fuelWorth: 6
+    panicSpeed: 5
+    speedMult: 0
     exitImmunity: 3
     debugTarget: {fileID: 0}
     debugExitCollider: {fileID: 0}

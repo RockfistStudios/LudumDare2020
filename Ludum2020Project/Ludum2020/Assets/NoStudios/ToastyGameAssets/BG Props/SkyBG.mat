@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BackTex:
-        m_Texture: {fileID: 2800000, guid: 4c7c009aef1b704498ba594aae3f379b, type: 3}
+        m_Texture: {fileID: 2800000, guid: f846ce10b627c4b47a987ea7654cfb0d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DownTex:
-        m_Texture: {fileID: 2800000, guid: 29a37773228705643b5002b205d62296, type: 3}
+        m_Texture: {fileID: 2800000, guid: 837a9c52b1ffacb46a097e14223867ef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -40,11 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FrontTex:
-        m_Texture: {fileID: 2800000, guid: e87e3148f8b587d4ab69a905c1490f03, type: 3}
+        m_Texture: {fileID: 2800000, guid: fadb7fda163b1d14a8dce3ad8da1a079, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LeftTex:
-        m_Texture: {fileID: 2800000, guid: ba778fe7f46eb4448a61f3081ec939e9, type: 3}
+        m_Texture: {fileID: 2800000, guid: d26e72235ad7ec943bf52e2851cd0a26, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RightTex:
-        m_Texture: {fileID: 2800000, guid: b168a5961e7830346a9157e5c9c0116a, type: 3}
+        m_Texture: {fileID: 2800000, guid: d26e72235ad7ec943bf52e2851cd0a26, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -68,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _UpTex:
-        m_Texture: {fileID: 2800000, guid: 29a37773228705643b5002b205d62296, type: 3}
+        m_Texture: {fileID: 2800000, guid: 837a9c52b1ffacb46a097e14223867ef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -79,7 +79,7 @@ Material:
     - _Cutoff: 0.5
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Exposure: 1.22
+    - _Exposure: 1.08
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -87,7 +87,7 @@ Material:
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Rotation: 41.8
+    - _Rotation: 53
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
