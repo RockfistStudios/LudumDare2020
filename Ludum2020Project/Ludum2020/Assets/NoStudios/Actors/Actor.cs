@@ -189,18 +189,19 @@ public class Actor : MonoBehaviour
         Vector3 right = Vector3.Cross(up, fwd);        // right vector
         float dir = Vector3.Dot(right, targetDir);
 
-        if (dir > 0f)
-        {
-            return 1f;
-        }
-        else if (dir < 0f)
-        {
-            return -1f;
-        }
-        else
-        {
-            return 0f;
-        }
+        return dir;
+        //if (dir > 0f)
+        //{
+        //    return 1f;
+        //}
+        //else if (dir < 0f)
+        //{
+        //    return -1f;
+        //}
+        //else
+        //{
+        //    return 0f;
+        //}
     }
 
 }
