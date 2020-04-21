@@ -84,20 +84,20 @@ MonoBehaviour:
   allTextureChannelAO: 1
   allTextureChannelAlpha: 3
   sourceTextures:
-  - diffuse: {fileID: 2800000, guid: 0889a234a2a66fd4da66e83d8e8ce23a, type: 3}
-    height: {fileID: 2800000, guid: 9310f28e4612c8445b225ab51e4645d1, type: 3}
+  - diffuse: {fileID: 2800000, guid: b80eb2001acf13f4295a3431751e7e6e, type: 3}
+    height: {fileID: 2800000, guid: 042ede92eafbc9846b6ae81b912d3bc0, type: 3}
     heightChannel: 2
-    normal: {fileID: 2800000, guid: 9afd29a6b0643fc489b64b19286d36d6, type: 3}
-    smoothness: {fileID: 2800000, guid: 912220b8831e6ce49ab003abd1864a12, type: 3}
+    normal: {fileID: 2800000, guid: 9a20e3c29a4d92f4f8831ae16ccf51c7, type: 3}
+    smoothness: {fileID: 2800000, guid: 9271b6ec0a82f04499ec66d3a0e90b43, type: 3}
     smoothnessChannel: 3
-    isRoughness: 1
-    ao: {fileID: 2800000, guid: 8c369d4af025c9b4f8d9eadb174322b9, type: 3}
+    isRoughness: 0
+    ao: {fileID: 2800000, guid: 6a025ed62f8dcd14289c9bf42ab9e7a4, type: 3}
     aoChannel: 1
     alpha: {fileID: 0}
     alphaChannel: 1
     normalizeAlpha: 0
     emis: {fileID: 0}
-    metal: {fileID: 0}
+    metal: {fileID: 2800000, guid: 114cc324200dc3948a1d3f73deaae0b7, type: 3}
     metalChannel: 0
     specular: {fileID: 0}
     noiseNormal: {fileID: 0}
@@ -114,20 +114,20 @@ MonoBehaviour:
     traxIsRoughness: 0
     traxAO: {fileID: 0}
     traxAOChannel: 1
-  - diffuse: {fileID: 2800000, guid: 98e46588bbdbc574a98d29dd140eecd1, type: 3}
-    height: {fileID: 2800000, guid: 9c723aa4269c490468e8b7fc357d4904, type: 3}
+  - diffuse: {fileID: 2800000, guid: 76468269e61c23149a0649e0b458b7dc, type: 3}
+    height: {fileID: 2800000, guid: 9310f28e4612c8445b225ab51e4645d1, type: 3}
     heightChannel: 2
-    normal: {fileID: 2800000, guid: 3ddd3e1a7a604b142920da42f7d13aac, type: 3}
-    smoothness: {fileID: 2800000, guid: f98dc2f5f813c6d4aa981aa5f0a3069f, type: 3}
+    normal: {fileID: 2800000, guid: bf668df75280eeb4498cfafb663de681, type: 3}
+    smoothness: {fileID: 2800000, guid: 7eb4710a396859242b9ff86fbce11cdd, type: 3}
     smoothnessChannel: 3
     isRoughness: 1
-    ao: {fileID: 2800000, guid: 8aa491acf74a0a74484b06482df306d2, type: 3}
+    ao: {fileID: 2800000, guid: 2b12b9553018abb4bacd1daf6fbf5f2c, type: 3}
     aoChannel: 1
     alpha: {fileID: 0}
     alphaChannel: 1
     normalizeAlpha: 0
     emis: {fileID: 0}
-    metal: {fileID: 2800000, guid: 114cc324200dc3948a1d3f73deaae0b7, type: 3}
+    metal: {fileID: 0}
     metalChannel: 0
     specular: {fileID: 0}
     noiseNormal: {fileID: 0}

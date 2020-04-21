@@ -46,6 +46,16 @@ MonoBehaviour:
     debugTarget: {fileID: 0}
     debugExitCollider: {fileID: 0}
   - prefab: {fileID: 435949398402959219, guid: b2038e25a8a63dc4a8a37b49d3d636ba, type: 3}
+    spawnPointID: 0
+    targetID: 1
+    targetFromID: {fileID: 0}
+    fuelWorth: 6
+    panicSpeedMult: 2
+    speedMult: 1
+    exitImmunity: 3
+    debugTarget: {fileID: 0}
+    debugExitCollider: {fileID: 0}
+  - prefab: {fileID: 435949398402959219, guid: b2038e25a8a63dc4a8a37b49d3d636ba, type: 3}
     spawnPointID: 2
     targetID: 3
     targetFromID: {fileID: 0}

@@ -121,11 +121,11 @@ public class ToastyController : MonoBehaviour
             {
                 if(fuel>70)
                 {
-                    fuel -= burnRate*2;
+                    fuel -= burnRate*4;
                 }
                 if(gameLoopManager.currentLevel >0)
                 {
-                    fuel -= burnRate+1*gameLoopManager.currentLevel;
+                    fuel -= burnRate+2*gameLoopManager.currentLevel;
                 }
                 else
                 {

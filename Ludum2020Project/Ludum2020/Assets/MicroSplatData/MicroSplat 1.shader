@@ -108,11 +108,16 @@ _TerrainNormalmapTexture("InstancedPerPixelNormal", 2D) = "bump" {}
       #define _MAX3LAYER 1
       #define _MAX4TEXTURES 1
       #define _PERTEXUVSCALEOFFSET 1
+      #define _PERTEXSATURATION 1
+      #define _PERTEXTINT 1
+      #define _PERTEXBRIGHTNESS 1
+      #define _PERTEXCONTRAST 1
       #define _PERTEXNORMSTR 1
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _DETAILNOISE 1
       #define _DISTANCERESAMPLE 1
+      #define _DISTANCERESAMPLEHEIGHTBLEND 1
       #define _NORMALNOISE 1
       #define _MSRENDERLOOP_UNITYLD 1
 
@@ -4511,11 +4516,16 @@ GraphVertexInput ApplyMeshModification(inout GraphVertexInput input)
       #define _MAX3LAYER 1
       #define _MAX4TEXTURES 1
       #define _PERTEXUVSCALEOFFSET 1
+      #define _PERTEXSATURATION 1
+      #define _PERTEXTINT 1
+      #define _PERTEXBRIGHTNESS 1
+      #define _PERTEXCONTRAST 1
       #define _PERTEXNORMSTR 1
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _DETAILNOISE 1
       #define _DISTANCERESAMPLE 1
+      #define _DISTANCERESAMPLEHEIGHTBLEND 1
       #define _NORMALNOISE 1
       #define _MSRENDERLOOP_UNITYLD 1
 
@@ -8777,11 +8787,16 @@ GraphVertexInput ApplyMeshModification(inout GraphVertexInput input)
       #define _MAX3LAYER 1
       #define _MAX4TEXTURES 1
       #define _PERTEXUVSCALEOFFSET 1
+      #define _PERTEXSATURATION 1
+      #define _PERTEXTINT 1
+      #define _PERTEXBRIGHTNESS 1
+      #define _PERTEXCONTRAST 1
       #define _PERTEXNORMSTR 1
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _DETAILNOISE 1
       #define _DISTANCERESAMPLE 1
+      #define _DISTANCERESAMPLEHEIGHTBLEND 1
       #define _NORMALNOISE 1
       #define _MSRENDERLOOP_UNITYLD 1
 
@@ -13013,11 +13028,16 @@ GraphVertexInput ApplyMeshModification(inout GraphVertexInput input)
       #define _MAX3LAYER 1
       #define _MAX4TEXTURES 1
       #define _PERTEXUVSCALEOFFSET 1
+      #define _PERTEXSATURATION 1
+      #define _PERTEXTINT 1
+      #define _PERTEXBRIGHTNESS 1
+      #define _PERTEXCONTRAST 1
       #define _PERTEXNORMSTR 1
       #define _BRANCHSAMPLES 1
       #define _BRANCHSAMPLESAGR 1
       #define _DETAILNOISE 1
       #define _DISTANCERESAMPLE 1
+      #define _DISTANCERESAMPLEHEIGHTBLEND 1
       #define _NORMALNOISE 1
       #define _MSRENDERLOOP_UNITYLD 1
 
@@ -17300,7 +17320,7 @@ GraphVertexInput ApplyMeshModification(inout GraphVertexInput input)
 
       }
    Dependency "AddPassShader" = "Hidden/MicroSplat/AddPass"
-   Dependency "BaseMapShader" = "Hidden/MicroSplat/Terrain_Base1251555580"
+   Dependency "BaseMapShader" = "Hidden/MicroSplat/Terrain_Base-1012102600"
    CustomEditor "MicroSplatShaderGUI"
    Fallback "Nature/Terrain/Diffuse"
 }

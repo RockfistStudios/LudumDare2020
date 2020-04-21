@@ -5841,7 +5841,7 @@ MonoBehaviour:
   persistBetweenScenes: 0
   shouldLogDestroys: 0
   showBusColors: 0
-  areGroupsExpanded: 1
+  areGroupsExpanded: 0
   soundGroupTemplate: {fileID: 400008, guid: 877a3a4bf0a4abf43aba41125e1d3101, type: 3}
   soundGroupVariationTemplate: {fileID: 400000, guid: 08eea2d8c4572c7479da53cfbc14bde6,
     type: 3}
@@ -5911,7 +5911,7 @@ MonoBehaviour:
   newGroupSpatialType: 1
   newGroupSpatialBlend: 1
   musicPlaylists:
-  - isExpanded: 1
+  - isExpanded: 0
     playlistName: Toasted
     songTransitionType: 1
     MusicSettings:
@@ -5982,14 +5982,14 @@ MonoBehaviour:
     playlistName: Toasted_Restart
     songTransitionType: 1
     MusicSettings:
-    - alias: 
+    - alias: intro
       audLocation: 0
       clip: {fileID: 8300000, guid: d88d8fdd032aae14ab61414f4885c24f, type: 3}
-      songName: Toasted Theme (Normal Quicker Loop intro)-partial
+      songName: intro
       resourceFileName: 
       volume: 0.1
       pitch: 1
-      isExpanded: 0
+      isExpanded: 1
       isLoop: 0
       isChecked: 1
       metadataStringValues: []
@@ -6007,14 +6007,64 @@ MonoBehaviour:
       songStartedCustomEvent: 
       songChangedEventExpanded: 0
       songChangedCustomEvent: 
-    - alias: 
+    - alias: standard
       audLocation: 0
       clip: {fileID: 8300000, guid: 06779ea8e17faee4cbd24a2857d7096f, type: 3}
-      songName: Toasted Theme (normal loop with identifier)
+      songName: standard
       resourceFileName: 
       volume: 0.1
       pitch: 1
-      isExpanded: 0
+      isExpanded: 1
+      isLoop: 1
+      isChecked: 1
+      metadataStringValues: []
+      metadataBoolValues: []
+      metadataIntValues: []
+      metadataFloatValues: []
+      metadataExpanded: 1
+      songStartTimeMode: 0
+      customStartTime: 0
+      customStartTimeMax: 0
+      lastKnownTimePoint: 0
+      wasLastKnownTimePointSet: 0
+      songIndex: 0
+      songStartedEventExpanded: 0
+      songStartedCustomEvent: 
+      songChangedEventExpanded: 0
+      songChangedCustomEvent: 
+    - alias: high
+      audLocation: 0
+      clip: {fileID: 8300000, guid: 8934d4493666c0944b81c03c05600049, type: 3}
+      songName: high
+      resourceFileName: 
+      volume: 1
+      pitch: 1
+      isExpanded: 1
+      isLoop: 1
+      isChecked: 1
+      metadataStringValues: []
+      metadataBoolValues: []
+      metadataIntValues: []
+      metadataFloatValues: []
+      metadataExpanded: 1
+      songStartTimeMode: 0
+      customStartTime: 0
+      customStartTimeMax: 0
+      lastKnownTimePoint: 0
+      wasLastKnownTimePointSet: 0
+      songIndex: 0
+      songStartedEventExpanded: 0
+      songStartedCustomEvent: 
+      songChangedEventExpanded: 0
+      songChangedCustomEvent: 
+    - alias: low
+      audLocation: 0
+      clip: {fileID: 8300000, guid: cb3c5907369b43c4f9e92401874e5f9c, type: 3}
+      songName: low
+      resourceFileName: 
+      volume: 1
+      pitch: 1
+      isExpanded: 1
       isLoop: 1
       isChecked: 1
       metadataStringValues: []
@@ -8330,6 +8380,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PC: {fileID: 625741426}
+  highLoop: high
+  lowLoop: low
+  standardLoop: standard
 --- !u!1 &1449303671
 GameObject:
   m_ObjectHideFlags: 0
@@ -9022,6 +9075,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1542681610}
         m_MethodName: ToastyHPChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1444266911}
+        m_MethodName: SetLoopByHealth
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
